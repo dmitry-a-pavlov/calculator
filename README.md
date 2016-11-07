@@ -12,7 +12,8 @@
 
 	- Numbers: integers between Integer.MIN_VALUE and Integer.MAX_VALUE
 	- Variables: strings of characters, where each character is one of a-z, A-Z
-	- Arithmetic functions: add, sub, mult, div, each taking two arbitrary expressions as arguments.  In other words, each argument may be any of the expressions on this list.
+	- Arithmetic functions: add, sub, mult, div, each taking two arbitrary expressions as arguments.
+	  In other words, each argument may be any of the expressions on this list.
 	- A “let” operator for assigning values to variables:
 	  	let(<variable name>, <value expression>, <expression where variable is used>)
 	  	the <value expression> and the <expression where the variable is used>

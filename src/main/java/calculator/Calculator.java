@@ -89,8 +89,6 @@ public class Calculator {
 		for (int i = tokens.length - 1; i >= 0; i--) {
 			
 			//assume our language is case sensitive
-			//all operations have associativity property except 'let'
-			// -> no needs to care about operation's order, only for 'let'
 			switch (tokens[i]) {
 			case ADD_TOKEN:
 				checkSyntax(src, stack, 2);
@@ -113,7 +111,6 @@ public class Calculator {
 				stack.push(new LetNode(stack.pop(), stack.pop(), stack.pop()));
 				continue;
 			}
-			
 			if(NUMBERS.matcher(tokens[i]).matches()) {
 				stack.push(new NumberNode(tokens[i]));
 				continue;
@@ -124,18 +121,14 @@ public class Calculator {
 			}
 			
 			throw new SytaxErrorException("Token is not recognized: " + tokens[i]);
-
 		}
-		
 		//the invariant must be hold
 		if(stack.size() != 1) {
 			throw new SytaxErrorException(ERROR_MESSAGE + src);
 		}
-		
 		if(getLevel(logger) == Level.FINE) {
 			logger.log(Level.FINE, "parser output:" + stack.peek().toString());
 		}
-		
 		return new Calculator(stack.pop()); 
 	}
 
@@ -155,7 +148,6 @@ public class Calculator {
 		syntaxTree.accept(evaluator);
 		return evaluator.getResult();
 	}
-
 
 	//sanity tests
 	public static void main(String[] args) {
@@ -177,7 +169,6 @@ public class Calculator {
 		for (int i = leaves.length - 1; i >= 0; i--) {
 			System.out.print(leaves[i] + " ");
 		}
-		
 		Calculator calc = Calculator.parse(source); 
 		System.out.println();
 		System.out.println(calc);
@@ -186,7 +177,5 @@ public class Calculator {
 		assert expression.equals(calc.toString());
 		
 		System.out.println("result:"  + calc.eval());
-		
 	}
-
 }

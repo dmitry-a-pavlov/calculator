@@ -43,6 +43,9 @@ public class Utils {
 		return expression == null || expression.isEmpty();
 	}
 
+	/**
+	 * Get verbosity level from the system
+	 */
 	public static Level getLevel(Logger logger) {
 		while(logger != null) {
 			Level level = logger.getLevel();
@@ -54,7 +57,4 @@ public class Utils {
 		}
 		return null;
 	}
-
-	
-	
 }

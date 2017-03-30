@@ -24,7 +24,8 @@ public class IncorrectSyntaxTest {
 						{"add(1, mul(2, ", "Wrong sytax"},
 						{"let(a, add(5,a), add(a, a))", "There is a self-reference"},
 						{"let(a, 5, add(a_, a))", "Token is not recognized"},
-						{"let(5, 5, add(a, a))", "Variable expected but"}						
+						{"let(5, 5, add(a, a))", "Variable expected but"},
+						{"a", "No varable found"}
 				});
 	}
 	

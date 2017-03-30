@@ -8,6 +8,16 @@
 # Run example:
 	run.cmd
 
+# Grammar:
+	<expression> := <oper1>(<expression>,<expression>) 
+			| <oper2>(<variable>,<expression>,<expression>)
+			| <variable>
+			| <number>
+	<oper1>   := add | sub | mult | div
+        <oper2>   := let
+	<variable>:=[a-zA-Z]+
+	<number>  :=[+|-]?[0-9]+
+
 # Assumption:
 
 	- Numbers: integers between Integer.MIN_VALUE and Integer.MAX_VALUE
@@ -33,5 +43,3 @@
         <verbose level> :=  INFO | ERROR | DEBUG
         ERROR level will be set by default
         Example: java calculator.Main "add(2, 2)" INFO
-
-

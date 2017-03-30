@@ -20,6 +20,7 @@ public class CalculatorTest {
 	public static Collection<Object[]> data() {
 		return Arrays.asList(
 				new Object[][] { 
+						{"5", 5},
 						{"add(1, 2)", 3}, 
 						{"add(1, mult(2, 3))", 7}, 
 						{"mult(add(2, 2), div(9, 3))", 12},

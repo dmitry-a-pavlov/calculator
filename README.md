@@ -1,14 +1,14 @@
-# calculator
+# Calculator
 	Simple command-line calculator
 
 
-##Build:
+# Build:
 	mvn install
 
-##Run example:
+# Run example:
 	run.cmd
 
-##Assumption:
+# Assumption:
 
 	- Numbers: integers between Integer.MIN_VALUE and Integer.MAX_VALUE
 	- Variables: strings of characters, where each character is one of a-z, A-Z
@@ -19,14 +19,14 @@
 	  	the <value expression> and the <expression where the variable is used>
 		may be an arbitrary expression from this list. 
 
-##Additional assumptions:
+# Additional assumptions:
 	- Case sensitive<br>
 	- Variables have local visibility: inside 'let' and its subexpressions
 	- Variables can be overwritten by internal 'let' expression
 	- Lazy evaluation - 'let(a, mult(100, 3), add(10,10))' will not evaluate 'mult(100, 3)' 
 	
 
-##Usage:
+# Usage:
 	
         java -cp="calc.jar" calculator.Main "<expression>" [<verbose level>]
         <expression> := the calculator language expression
